@@ -1,0 +1,15 @@
+package com.mykaarma.testoptimus.rulesengine;
+import com.mykaarma.testoptimus.rulesengine.Test;
+import com.mykaarma.testoptimus.rulesengine.Result;
+
+	dialect "mvel"
+
+
+rule "noNullRoomPeriod"
+	salience -1
+    when
+        Test( isValid == true )
+        $result: Result()
+    then
+       $result.getResult().add("First Rule")
+end
